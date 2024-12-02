@@ -402,16 +402,8 @@
     </div>
 </footer>
 
-<?php if (ot_get_option('custom_script_footer') != '') {
-    echo ot_get_option('custom_script_footer');
-} ?>
-
 </div>
 <?php wp_footer() ?>
 </body>
-
-<script type="application/ld+json">
-
-</script>
 
 </html>
