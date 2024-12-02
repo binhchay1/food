@@ -1,15 +1,15 @@
 === Featured Images in RSS for Mailchimp & More ===
 Contributors: 5starplugins
 Donate link: https://5starplugins.com/
-Tags: featured images in rss, rss images, featured image, thumbnails, images in rss, mailchimp, mailchimp rss, rss campaigns, infusionsoft, hubspot, constant contact, content marketing, marketing automation
+Tags: featured images in rss, rss images, mailchimp, rss campaigns, content marketing
 Requires at least: 2.9
-Tested up to: 6.4.3
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Send images to RSS instantly for free. Output blog or WooCommerce photos to Mailchimp RSS email campaigns, ActiveCampaign, Infusionsoft, Hubspot, Bloglovin’, Feedly and more.
+Send images to RSS instantly for free. Output blog or WooCommerce photos to Mailchimp RSS email campaigns, ActiveCampaign, Hubspot, Feedly and more.
 
 == Description ==
 
@@ -186,14 +186,17 @@ Please submit a [rating and review](https://wordpress.org/support/plugin/feature
 4. A sad example of a plain RSS feed with no images, because they aren't using this plugin. Don't have sad RSS feeds, use this plugin!
 
 == Upgrade Notice ==
-* Please update: Updated SDK to v2.5.10.
+* Please update: Updated Freemius SDK to v2.9
 
 == Changelog ==
+= 1.6.3 =
+* Updated Freemius SDK to v2.9
+
 = 1.6.2 =
-* Updated SDK to v2.5.10.
+* Updated Freemius SDK to v2.5.10.
 
 = 1.6.1 =
-* Updated SDK to privacy-focused v2.5.5, bump WP compatibility to v6.2
+* Updated Freemius SDK to privacy-focused v2.5.5, bump WP compatibility to v6.2
 
 = 1.6 =
 * Updated Freemius SDK, bump WP compatibility to v6.1
