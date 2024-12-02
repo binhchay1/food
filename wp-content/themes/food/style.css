@@ -2095,6 +2095,7 @@ html {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   max-height: calc(var(--current-line-height) * 2);
 }
@@ -2113,6 +2114,7 @@ html {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: var(--truncate-lines);
+  line-clamp: var(--truncate-lines);
   -webkit-box-orient: vertical;
   max-height: calc(var(--current-line-height) * var(--truncate-lines));
 }
@@ -2635,6 +2637,7 @@ img.circle.svelte-kb6fq {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: var(--truncate-lines);
+  line-clamp: var(--truncate-lines);
   -webkit-box-orient: vertical;
   max-height: calc(var(--current-line-height) * var(--truncate-lines));
 }

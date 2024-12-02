@@ -9,6 +9,7 @@
         "bmain",
         "bpymps",
         "checkemail",
+        "commentlist",
         "confirmaction",
         "COOKIEHASH",
         "COOKIEPATH",
@@ -28,6 +29,7 @@
         "ixdkf",
         "izna",
         "jgnof",
+        "leafcolor",
         "loggedout",
         "loginform",
         "lostpassword",
@@ -51,9 +53,11 @@
         "SITECOOKIEPATH",
         "siteurl",
         "testcookie",
+        "twentytwelve",
         "unslash",
         "woocommerce",
         "wpqpqh",
+        "ycom",
         "yyfj"
     ]
 }
