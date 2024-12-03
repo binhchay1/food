@@ -21,6 +21,27 @@ function food_setup()
 	add_theme_support('post-thumbnails');
 	add_theme_support('title-tag');
 	add_theme_support('woocommerce');
+	add_theme_support('custom-background');
+
+	register_nav_menus(
+		array(
+			'top' => __('Top Menu', 'top-food'),
+		)
+	);
+
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		)
+	);
+
+	remove_action('wp_head', 'wp_generator');
+	add_filter('widget_text', 'do_shortcode');
 }
 
 add_action('after_setup_theme', 'food_setup');
@@ -40,7 +61,7 @@ function food_scripts_styles()
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
 
-	if(is_single()) {
+	if (is_single()) {
 		wp_enqueue_style('style', get_stylesheet_directory_uri() . '/asset/css/post.css');
 	}
 }

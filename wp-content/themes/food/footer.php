@@ -4,12 +4,10 @@
  */
 ?>
 <div class="search-area svelte-ozqdd1">
-	<h2
-		class="search-area__title svelte-ozqdd1"
-		data-svelte-h="svelte-ero03s">
+	<h2 class="search-area__title svelte-ozqdd1">
 		Find More Recipes
 	</h2>
-	<form action="/search/" method="GET" class="svelte-ozqdd1">
+	<form action="/search/" method="POST" class="svelte-ozqdd1">
 		<div class="search svelte-ozqdd1">
 			<span class="search__icon svelte-ozqdd1">
 				<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -31,7 +29,7 @@
 			</span>
 			<input aria-label="search for recipes" class="search__input svelte-ozqdd1" type="text" placeholder="I'm craving..." />
 		</div>
-		<button class="button button--primary svelte-ozqdd1" type="submit" data-svelte-h="svelte-1ixdkf2">
+		<button class="button button--primary svelte-ozqdd1" type="submit">
 			Search
 		</button>
 	</form>
@@ -45,7 +43,7 @@
 					<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M13.3409431,5.42086551 L13.354496,21.9532228 C13.354496,22.7416144 12.7153783,23.3807321 11.9269867,23.3807321 C11.1385951,23.3807321 10.4994774,22.7416144 10.4994774,21.9532228 L10.4859576,5.46118139 L4.38135969,11.5657793 C3.82388263,12.1232563 2.92003374,12.1232563 2.36255669,11.5657793 C1.80507963,11.0083022 1.80507963,10.1044533 2.36255669,9.54697626 L10.9242068,0.985326179 C11.4816838,0.427849123 12.3855327,0.427849123 12.9430098,0.985326179 L21.5056181,9.54793452 C22.0630952,10.1054116 22.0630952,11.0092605 21.5056181,11.5667375 C20.9481411,12.1242146 20.0442922,12.1242146 19.4868151,11.5667375 L13.3409431,5.42086551 Z" fill="currentColor"></path>
 					</svg>
-					<span class="svelte-1ozytz" data-svelte-h="svelte-1pej0sj">Back To Top</span>
+					<span class="svelte-1ozytz">Back To Top</span>
 				</a>
 				<div class="social row svelte-1ozytz">
 					<a class="link facebook svelte-1ozytz" title="Facebook" href="https://www.facebook.com/Food.com" target="_blank">
@@ -153,83 +151,26 @@
 				</div>
 			</div>
 			<div class="row svelte-1ozytz">
-				<a
-					class="link svelte-1ozytz"
-					href="https://www.food.com/topic"
-					target="_blank">All Categories
-				</a>
-				<a
-					class="link svelte-1ozytz"
-					href="https://www.food.com/html-sitemap"
-					target="_blank">Site Map
-				</a>
-				<a
-					class="link svelte-1ozytz"
-					href="https://www.food.com/how-to/about-us-31"
-					target="_blank">About Us
-				</a>
-				<a
-					class="link svelte-1ozytz"
-					href="https://food.zendesk.com/"
-					target="_blank">Help
-				</a>
+				<a class="link svelte-1ozytz" href="https://www.food.com/topic" target="_blank">All Categories</a>
+				<a class="link svelte-1ozytz" href="https://www.food.com/html-sitemap" target="_blank">Site Map</a>
+				<a class="link svelte-1ozytz" href="https://www.food.com/how-to/about-us-31" target="_blank">About Us</a>
+				<a class="link svelte-1ozytz" href="https://food.zendesk.com/" target="_blank">Help</a>
 			</div>
 		</div>
 		<div class="section svelte-1ozytz">
 			<div>
-				<div id="see-all-snd" class="link hover-toggle svelte-1ozytz">
-					The Discovery Family of Networks
-
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 1024 1024">
-						<path fill="currentColor" d="M19.552 781.839c-26.080-26.080-26.080-68.364 0-94.444l445.218-445.218c12.531-12.531 29.505-19.551 47.225-19.551s34.699 7.037 47.225 19.551l445.218 445.218c26.074 26.080 26.074 68.364 0 94.444-26.097 26.080-68.375 26.080-94.444 0l-397.999-397.999-397.999 397.999c-26.080 26.080-68.364 26.080-94.444 0z"></path>
-					</svg>
-					<ul
-						class="family-links hover-toggle__target svelte-1ozytz"
-						data-svelte-h="svelte-as24jo">
-						<li class="svelte-1ozytz">
-							<a target="_blank" href="https://www.hgtv.com" class="svelte-1ozytz">HGTV</a>
-						</li>
-						<li class="svelte-1ozytz">
-							<a target="_blank" href="https://www.diynetwork.com" class="svelte-1ozytz">DIY Network</a>
-						</li>
-						<li class="svelte-1ozytz">
-							<a target="_blank" href="https://www.foodnetwork.com" class="svelte-1ozytz">Food Network</a>
-						</li>
-						<li class="svelte-1ozytz">
-							<a target="_blank" href="https://www.cookingchanneltv.com" class="svelte-1ozytz">Cooking Channel</a>
-						</li>
-						<li class="svelte-1ozytz">
-							<a target="_blank" href="https://www.travelchannel.com" class="svelte-1ozytz">Travel Channel</a>
-						</li>
-						<li class="svelte-1ozytz">
-							<a target="_blank" href="https://hgtv.pl/" class="svelte-1ozytz">HGTV Poland</a>
-						</li>
-					</ul>
-				</div>
 				<span class="copyright svelte-1ozytz">© 2024 Warner Bros. Discovery, Inc. or its subsidiaries and
 					affiliates. All rights reserved.
 				</span>
 			</div>
-			<ul class="row svelte-1ozytz" data-svelte-h="svelte-7ecg22">
+			<ul class="row svelte-1ozytz">
 				<li class="svelte-1ozytz">
 					<a class="link svelte-1ozytz" href="https://corporate.discovery.com/contact/advertising/" target="_blank">Advertise</a>
 				</li>
 				<li class="svelte-1ozytz">
-					<a class="link svelte-1ozytz" href="https://www.wbdprivacy.com/policycenter/b2c" target="_blank">AdChoices</a>
-				</li>
-				<li class="svelte-1ozytz">
 					<a class="link svelte-1ozytz" href="https://www.wbdprivacy.com/policycenter/b2c/" target="_blank">Privacy Policy</a>
 				</li>
-				<li class="svelte-1ozytz">
-					<a class="link svelte-1ozytz" href="https://corporate.discovery.com/visitor-agreement/" target="_blank">Visitor Agreement</a>
-				</li>
 			</ul>
-			<div class="row row--short svelte-1ozytz">
-				<a class="link svelte-1ozytz" href="https://corporate.discovery.com/privacy-policy/#cappi" target="_blank" data-svelte-h="svelte-1bpymps">California Privacy Policy</a>
-				<button class="link oneTrust svelte-1ozytz" data-svelte-h="svelte-jgnof5">
-					Do Not Sell or Share My Personal Information
-				</button>
-			</div>
 		</div>
 	</div>
 </footer>

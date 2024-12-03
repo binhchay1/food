@@ -1464,6 +1464,7 @@ data {
 body,
 html {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .site.svelte-qlls6c {

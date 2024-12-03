@@ -4,59 +4,21 @@
 	<div class="recipeNavigationContainer svelte-1czu6m8">
 		<div class="recipeNavigationWrapper svelte-1czu6m8">
 			<div class="recipeNavigation svelte-1czu6m8">
-				<a
-					href="?nav=recipe"
-					class="cta svelte-1czu6m8 disabled"
-					aria-label="Previous Recipe">
+				<a href="?nav=recipe" class="cta svelte-1czu6m8 disabled" aria-label="Previous Recipe">
 					<span class="caretWrapper prev svelte-1czu6m8">
-						<svg
-							width="15px"
-							height="15px"
-							viewBox="0 0 12 21"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							class="caret">
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M0.698614 10.3047C0.693421 10.471 0.754288 10.639 0.881253 10.7659L10.2393 20.124C10.4832 20.3679 10.8788 20.3679 11.1227 20.124C11.3666 19.88 11.3666 19.4845 11.1227 19.2405L2.18687 10.3047L11.1237 1.36788C11.3676 1.12394 11.3676 0.728402 11.1237 0.484466C10.8798 0.24053 10.4842 0.24053 10.2403 0.484466L0.881253 9.84349C0.754288 9.97046 0.693421 10.1384 0.698614 10.3047Z"
-								fill="currentColor"
-								stroke="currentColor"
-								stroke-width="0.416667"></path>
+						<svg width="15px" height="15px" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="caret">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.698614 10.3047C0.693421 10.471 0.754288 10.639 0.881253 10.7659L10.2393 20.124C10.4832 20.3679 10.8788 20.3679 11.1227 20.124C11.3666 19.88 11.3666 19.4845 11.1227 19.2405L2.18687 10.3047L11.1237 1.36788C11.3676 1.12394 11.3676 0.728402 11.1237 0.484466C10.8798 0.24053 10.4842 0.24053 10.2403 0.484466L0.881253 9.84349C0.754288 9.97046 0.693421 10.1384 0.698614 10.3047Z" fill="currentColor" stroke="currentColor" stroke-width="0.416667"></path>
 						</svg>
 					</span>
-					<span
-						class="mobile-button svelte-1czu6m8"
-						data-svelte-h="svelte-14mcjoh">PREV</span>
-					<span
-						class="desktop-button svelte-1czu6m8"
-						data-svelte-h="svelte-1ngg0jh">PREVIOUS RECIPE</span>
+					<span class="mobile-button svelte-1czu6m8">PREV</span>
+					<span class="desktop-button svelte-1czu6m8">PREVIOUS RECIPE</span>
 				</a>
-				<a
-					href="?nav=recipe"
-					class="cta disabled svelte-1czu6m8"
-					aria-label="Next Recipe">
-					<span
-						class="mobile-button svelte-1czu6m8"
-						data-svelte-h="svelte-1bfgrml">NEXT</span>
-					<span
-						class="desktop-button svelte-1czu6m8"
-						data-svelte-h="svelte-13pub1p">NEXT RECIPE</span>
+				<a href="?nav=recipe" class="cta disabled svelte-1czu6m8" aria-label="Next Recipe">
+					<span class="mobile-button svelte-1czu6m8">NEXT</span>
+					<span class="desktop-button svelte-1czu6m8">NEXT RECIPE</span>
 					<span class="caretWrapper next svelte-1czu6m8">
-						<svg
-							width="15px"
-							height="15px"
-							viewBox="0 0 12 21"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							class="caret">
-							<path
-								fill-rule="evenodd"
-								clip-rule="evenodd"
-								d="M11.3068 10.3037C11.3119 10.1374 11.2511 9.96938 11.1241 9.84246L1.76611 0.484447C1.52213 0.240473 1.1266 0.240473 0.882659 0.484447C0.638722 0.728384 0.638722 1.12392 0.882659 1.36786L9.8185 10.3037L0.881683 19.2405C0.637746 19.4845 0.637746 19.88 0.881683 20.1239C1.12562 20.3679 1.52116 20.3679 1.76509 20.1239L11.1241 10.7649C11.2511 10.6379 11.3119 10.47 11.3068 10.3037Z"
-								fill="currentColor"
-								stroke="currentColor"
-								stroke-width="0.416667"></path>
+						<svg width="15px" height="15px" viewBox="0 0 12 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="caret">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M11.3068 10.3037C11.3119 10.1374 11.2511 9.96938 11.1241 9.84246L1.76611 0.484447C1.52213 0.240473 1.1266 0.240473 0.882659 0.484447C0.638722 0.728384 0.638722 1.12392 0.882659 1.36786L9.8185 10.3037L0.881683 19.2405C0.637746 19.4845 0.637746 19.88 0.881683 20.1239C1.12562 20.3679 1.52116 20.3679 1.76509 20.1239L11.1241 10.7649C11.2511 10.6379 11.3119 10.47 11.3068 10.3037Z" fill="currentColor" stroke="currentColor" stroke-width="0.416667"></path>
 						</svg>
 					</span>
 				</a>
@@ -66,38 +28,19 @@
 	<div class="swipe">
 		<div class="previous-recipe"></div>
 		<div class="current-recipe">
-			<main
-				id="recipe"
-				class="recipe layout svelte-1r658j4"
-				aria-hidden="false">
+			<main id="recipe" class="recipe layout svelte-1r658j4" aria-hidden="false">
 				<div class="layout__item breadcrumbs svelte-1r658j4">
 					<nav aria-label="Breadcrumb" class="svelte-18ct9e1">
 						<ol typeof="BreadcrumbList" class="svelte-18ct9e1">
-							<li
-								property="itemListElement"
-								typeof="ListItem"
-								class="svelte-1xnybjp">
+							<li property="itemListElement" typeof="ListItem" class="svelte-1xnybjp">
 								<meta property="position" content="1" />
-								<a
-									data-track
-									property="item"
-									typeof="WebPage"
-									aria-current="location"
-									href="/recipes">
+								<a data-track property="item" typeof="WebPage" aria-current="location" href="/recipes">
 									<span property="name">Recipes </span>
 								</a>
 							</li>
-							<li
-								property="itemListElement"
-								typeof="ListItem"
-								class="svelte-1xnybjp">
+							<li property="itemListElement" typeof="ListItem" class="svelte-1xnybjp">
 								<meta property="position" content="2" />
-								<a
-									data-track
-									property="item"
-									typeof="WebPage"
-									aria-current="location"
-									href="https://www.food.com/topic/cheesecake">
+								<a data-track property="item" typeof="WebPage" aria-current="location" href="https://www.food.com/topic/cheesecake">
 									<span property="name">Cheesecake </span>
 								</a>
 							</li>
@@ -420,7 +363,7 @@
 								d="M3.42857 0.857148V6.85714L0.856926 6.85714C0.383659 6.85714 0 7.24081 0 7.7142V18.0001C0 18.4734 0.383545 18.8571 0.856926 18.8571H3.42857V23.1429C3.42857 23.6162 3.81239 24 4.28581 24H16.2856C16.7591 24 17.1429 23.6165 17.1429 23.1429V18.8571H19.7145C20.1878 18.8571 20.5714 18.4735 20.5714 18.0001V7.7142C20.5714 7.24086 20.1879 6.85714 19.7145 6.85714H15.4286L17.1429 6.85714V0.857148C17.1429 0.383758 16.759 0 16.2856 0H4.28581C3.81237 0 3.42857 0.383549 3.42857 0.857148ZM15.4286 6.85714L5.14286 6.85714V1.71429H15.4286V6.85714ZM3.42857 17.1429V13.7143H17.1429V17.1429H18.8571V8.57143H1.71429V17.1429H3.42857ZM5.14286 22.2857H15.4286V15.4286H5.14286V22.2857Z"
 								fill="currentColor"></path>
 						</svg>
-						<span class="button__text" data-svelte-h="svelte-1vzl51l">Print</span>
+						<span class="button__text">Print</span>
 					</button>
 					<button
 						class="action action--share button--growing svelte-1r658j4"
@@ -438,7 +381,7 @@
 								d="M12.4445 0.344776C12.8064 -0.0724388 13.438 -0.117305 13.8552 0.244566L23.6552 8.74457C23.8742 8.9345 24 9.21012 24 9.5C24 9.78988 23.8742 10.0655 23.6552 10.2554L13.8552 18.7554C13.438 19.1173 12.8064 19.0724 12.4445 18.6552C12.0827 18.238 12.1275 17.6064 12.5448 17.2446L20.3208 10.5H7.93306C5.15674 10.5 3.69296 11.6546 2.899 13.0064C2.06047 14.4341 1.90757 16.1996 2.04366 17.386C2.10661 17.9347 1.71283 18.4305 1.16415 18.4935C0.61546 18.5564 0.119637 18.1627 0.0566949 17.614C-0.113114 16.1337 0.0551888 13.8992 1.17445 11.9936C2.33829 10.012 4.46891 8.5 7.93306 8.5H20.3208L12.5448 1.75543C12.1275 1.39356 12.0827 0.761991 12.4445 0.344776Z"
 								fill="currentColor"></path>
 						</svg>
-						<span class="button__text" data-svelte-h="svelte-17pna0p">Share</span>
+						<span class="button__text">Share</span>
 					</button>
 				</div>
 				<div class="layout__item i-made-this svelte-1r658j4">
@@ -467,7 +410,7 @@
 								d="M17.8667 5.2L17.053 2.75895C16.9138 2.34155 16.44 2 16 2H8C7.56 2 7.08615 2.34155 6.947 2.75895L6.13335 5.2H0.8C0.36 5.2 0 5.56 0 6V20.4C0 20.84 0.36 21.2 0.8 21.2H23.2C23.64 21.2 24 20.84 24 20.4V6C24 5.56 23.64 5.2 23.2 5.2H17.8667ZM22.4 19.6H1.6V6.8H7.28655L8.35325 3.6H15.6468L16.7135 6.8H22.4V19.6Z"
 								fill="currentColor"></path>
 						</svg>
-						<span class="button__text" data-svelte-h="svelte-zz569y">I Made This</span>
+						<span class="button__text">I Made This</span>
 					</button>
 				</div>
 				<div class="layout__item media svelte-1r658j4">
@@ -522,121 +465,8 @@
 								class="other-image svelte-wgcq7z"
 								role="button"
 								aria-label="View All Images">
-								<img
-									style="--aspect-ratio: 5/4"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/12080.jpg   20w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_80,ar_5:4/v1/img/recipes/12/08/0/12080.jpg   80w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_100,ar_5:4/v1/img/recipes/12/08/0/12080.jpg 100w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_120,ar_5:4/v1/img/recipes/12/08/0/12080.jpg 120w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_5:4/v1/img/recipes/12/08/0/12080.jpg 200w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_250,ar_5:4/v1/img/recipes/12/08/0/12080.jpg 250w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/12080.jpg"
-									sizes="33vw"
-									alt="photo by Food.com "
-									loading="eager"
-									class="hide-on-desktop svelte-kb6fq" />
-								<img
-									style="--aspect-ratio: 3/2"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/12080.jpg 200w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/12080.jpg"
-									sizes="200px"
-									alt="photo by Food.com "
-									loading="eager"
-									class="only-desktop svelte-kb6fq" />
-							</div>
-							<div
-								class="other-image svelte-wgcq7z"
-								role="button"
-								aria-label="View All Images">
-								<img
-									style="--aspect-ratio: 5/4"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg   20w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_80,ar_5:4/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg   80w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_100,ar_5:4/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg 100w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_120,ar_5:4/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg 120w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_5:4/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg 200w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_250,ar_5:4/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg 250w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg"
-									sizes="33vw"
-									alt="photo by alenafoodphoto"
-									loading="eager"
-									class="hide-on-desktop svelte-kb6fq" />
-								<img
-									style="--aspect-ratio: 3/2"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg 200w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/M5T9GOICSSDc86nEhrLg_DSC05556-2.jpg"
-									sizes="200px"
-									alt="photo by alenafoodphoto"
-									loading="eager"
-									class="only-desktop svelte-kb6fq" />
-							</div>
-							<div
-								class="other-image svelte-wgcq7z"
-								role="button"
-								aria-label="View All Images">
-								<img
-									style="--aspect-ratio: 5/4"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg   20w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_80,ar_5:4/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg   80w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_100,ar_5:4/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg 100w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_120,ar_5:4/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg 120w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_5:4/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg 200w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_250,ar_5:4/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg 250w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg"
-									sizes="33vw"
-									alt="photo by alenafoodphoto"
-									loading="eager"
-									class="hide-on-desktop svelte-kb6fq" />
-								<img
-									style="--aspect-ratio: 3/2"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg 200w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/A99IWLD8RKunszMverc6_DSC05559-2.jpg"
-									sizes="200px"
-									alt="photo by alenafoodphoto"
-									loading="eager"
-									class="only-desktop svelte-kb6fq" />
-							</div>
-							<div
-								class="other-image svelte-wgcq7z"
-								role="button"
-								aria-label="View All Images">
-								<img
-									style="--aspect-ratio: 5/4"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/picV6byMm.jpg   20w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_80,ar_5:4/v1/img/recipes/12/08/0/picV6byMm.jpg   80w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_100,ar_5:4/v1/img/recipes/12/08/0/picV6byMm.jpg 100w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_120,ar_5:4/v1/img/recipes/12/08/0/picV6byMm.jpg 120w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_5:4/v1/img/recipes/12/08/0/picV6byMm.jpg 200w,
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_250,ar_5:4/v1/img/recipes/12/08/0/picV6byMm.jpg 250w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/picV6byMm.jpg"
-									sizes="33vw"
-									alt="photo by FamOf8"
-									loading="eager"
-									class="hide-on-desktop svelte-kb6fq" />
-								<img
-									style="--aspect-ratio: 3/2"
-									srcset="
-                            https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/picV6byMm.jpg 200w
-                          "
-									src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/picV6byMm.jpg"
-									sizes="200px"
-									alt="photo by FamOf8"
-									loading="eager"
-									class="only-desktop svelte-kb6fq" />
+								<img style="--aspect-ratio: 5/4" src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_20,ar_5:4/v1/img/recipes/12/08/0/12080.jpg" sizes="33vw" alt="photo by Food.com" loading="eager" class="hide-on-desktop svelte-kb6fq" />
+								<img style="--aspect-ratio: 3/2" src="https://img.sndimg.com/food/image/upload/f_auto,c_thumb,q_55,w_200,ar_3:2/v1/img/recipes/12/08/0/12080.jpg" sizes="200px" alt="photo by Food.com" loading="eager" class="only-desktop svelte-kb6fq" />
 							</div>
 						</div>
 					</div>
@@ -656,9 +486,7 @@
 										stroke="currentColor"
 										d="M12.0234375,1.546875 C17.8094832,1.546875 22.5,6.2373918 22.5,12.0234375 C22.5,17.8094832 17.8094832,22.5 12.0234375,22.5 C6.2373918,22.5 1.546875,17.8094832 1.546875,12.0234375 C1.546875,6.2373918 6.2373918,1.546875 12.0234375,1.546875 Z M12.0234375,3.046875 C7.06581893,3.046875 3.046875,7.06581893 3.046875,12.0234375 C3.046875,16.9810561 7.06581893,21 12.0234375,21 C16.9810561,21 21,16.9810561 21,12.0234375 C21,7.06581893 16.9810561,3.046875 12.0234375,3.046875 Z M12,6.0234375 C12.4142136,6.0234375 12.75,6.3286979 12.75,6.70525568 L12.75,12 L15.9371628,12 C16.2738975,12 16.546875,12.3357864 16.546875,12.75 C16.546875,13.1642136 16.2738975,13.5 15.9371628,13.5 L12.1956724,13.5 C12.1332918,13.5152846 12.0676932,13.5234375 12,13.5234375 C11.9234911,13.5234375 11.849658,13.5130228 11.7801224,13.4936679 C11.6529527,13.4732746 11.5380974,13.4046785 11.4480706,13.3032728 C11.3250966,13.1818301 11.25,13.0196973 11.25,12.8416193 L11.25,6.70525568 C11.25,6.3286979 11.5857864,6.0234375 12,6.0234375 Z"></path>
 								</svg>
-								<dt
-									class="facts__label svelte-1r658j4"
-									data-svelte-h="svelte-1ha48hm">
+								<dt class="facts__label svelte-1r658j4">
 									Ready In:
 								</dt>
 								<dd class="facts__value svelte-1r658j4">1hr 20mins</dd>
@@ -675,9 +503,7 @@
 										fill="currentColor"
 										d="M17.2764 9.11082C17.52 8.77583 17.4459 8.30677 17.1109 8.06314C16.776 7.81951 16.3069 7.89357 16.0633 8.22856L17.2764 9.11082ZM15.0865 13.1487C15.1129 13.562 15.4694 13.8757 15.8827 13.8494C16.2961 13.823 16.6098 13.4665 16.5834 13.0531L15.0865 13.1487ZM15.72 8.43882C16.0314 8.16567 16.0624 7.69181 15.7892 7.38042C15.5161 7.06903 15.0422 7.03803 14.7308 7.31118L15.72 8.43882ZM11.8107 13.0755C11.8321 13.4891 12.1848 13.8071 12.5984 13.7857C13.0121 13.7643 13.3301 13.4116 13.3087 12.998L11.8107 13.0755ZM1.96044 13.1009L1.96044 12.3509C1.59025 12.3509 1.27543 12.621 1.21915 12.9869L1.96044 13.1009ZM21.0341 13.1009L21.7754 12.9869C21.7191 12.621 21.4043 12.3509 21.0341 12.3509V13.1009ZM16.803 21V21.75C16.9603 21.75 17.1137 21.7005 17.2414 21.6085L16.803 21ZM6.19159 21L5.75319 21.6085C5.88086 21.7005 6.03423 21.75 6.19159 21.75V21ZM7.03646 5.4687L7.37726 6.1368L7.03646 5.4687ZM7.64086 3.60562L6.97276 3.94642V3.94642L7.64086 3.60562ZM1.85646 6.55628L2.52456 6.21548H2.52456L1.85646 6.55628ZM3.71955 7.16068L3.37875 6.49259H3.37875L3.71955 7.16068ZM2.23372 4.24791L1.89292 3.57982L2.23372 4.24791ZM1.62932 6.111L0.961226 6.4518L1.62932 6.111ZM5.55064 2.55593L5.89144 3.22403L5.55064 2.55593ZM7.41372 3.16034L8.08182 2.81954V2.81954L7.41372 3.16034ZM21.8848 5.81653L21.2361 5.44013L21.8848 5.81653ZM21.2944 2.68294L20.8271 3.26959L20.8271 3.26959L21.2944 2.68294ZM17.4597 2.29199L16.9478 1.74391V1.74391L17.4597 2.29199ZM20.646 2.16648L21.1133 1.57983L21.1133 1.57982L20.646 2.16648ZM12.2452 7.13215L12.8319 7.59942L12.8319 7.59942L12.2452 7.13215ZM16.2593 8.33918L16.7266 7.75252L16.2593 8.33918ZM18.3337 11.9816L17.747 11.5143V11.5143L18.3337 11.9816ZM16.0633 8.22856C15.5945 8.8731 14.924 10.6037 15.0865 13.1487L16.5834 13.0531C16.4376 10.7687 17.0601 9.40819 17.2764 9.11082L16.0633 8.22856ZM14.7308 7.31118C14.1655 7.80707 13.3588 8.43292 12.757 9.3181C12.1281 10.243 11.7255 11.4288 11.8107 13.0755L13.3087 12.998C13.2397 11.6648 13.5599 10.8049 13.9974 10.1615C14.4619 9.47837 15.0651 9.01327 15.72 8.43882L14.7308 7.31118ZM20.2928 13.2149C20.5221 14.7053 19.9743 16.1956 19.1075 17.5051C18.2437 18.8101 17.1188 19.8481 16.3646 20.3915L17.2414 21.6085C18.1214 20.9745 19.3808 19.8098 20.3583 18.333C21.3328 16.8607 22.0835 14.9901 21.7754 12.9869L20.2928 13.2149ZM1.21915 12.9869C0.911076 14.9901 1.66172 16.8607 2.63628 18.333C3.6138 19.8098 4.87317 20.9745 5.75319 21.6085L6.62999 20.3915C5.87576 19.8481 4.75091 18.8101 3.88709 17.5051C3.02032 16.1956 2.47251 14.7053 2.70172 13.2149L1.21915 12.9869ZM11.8507 12.7094L7.29103 5.25985L6.01166 6.04291L10.5713 13.4925L11.8507 12.7094ZM3.51431 7.08464L6.0189 13.3782L7.41259 12.8236L4.90801 6.53L3.51431 7.08464ZM5.20983 1.88784L1.89292 3.57982L2.57453 4.91601L5.89144 3.22403L5.20983 1.88784ZM0.961226 6.4518L1.18837 6.89708L2.52456 6.21548L2.29742 5.7702L0.961226 6.4518ZM4.06035 7.82878L7.37726 6.1368L6.69566 4.8006L3.37875 6.49259L4.06035 7.82878ZM8.30896 3.26481L8.08182 2.81954L6.74563 3.50114L6.97276 3.94642L8.30896 3.26481ZM7.37726 6.1368C8.42762 5.601 8.84476 4.31517 8.30896 3.26481L6.97276 3.94642C7.13212 4.25882 7.00806 4.64125 6.69566 4.8006L7.37726 6.1368ZM1.18837 6.89708C1.72416 7.94744 3.00999 8.36458 4.06035 7.82878L3.37875 6.49259C3.06635 6.65194 2.68392 6.52788 2.52456 6.21548L1.18837 6.89708ZM1.89292 3.57982C0.842565 4.11561 0.42543 5.40144 0.961226 6.4518L2.29742 5.7702C2.13806 5.4578 2.26213 5.07537 2.57453 4.91601L1.89292 3.57982ZM5.89144 3.22403C6.20383 3.06467 6.58627 3.18874 6.74563 3.50114L8.08182 2.81954C7.54602 1.76918 6.26019 1.35204 5.20983 1.88784L5.89144 3.22403ZM21.2361 5.44013L17.8114 11.3424L19.1089 12.0952L22.5335 6.19293L21.2361 5.44013ZM17.8114 11.3424L17.78 11.3966L19.0774 12.1494L19.1089 12.0952L17.8114 11.3424ZM20.8271 3.26959C21.4826 3.79171 21.6566 4.71528 21.2361 5.44013L22.5335 6.19293C23.3273 4.82485 22.9989 3.08171 21.7617 2.09629L20.8271 3.26959ZM16.9478 1.74391L11.9611 6.40202L12.985 7.49818L17.9717 2.84006L16.9478 1.74391ZM11.9611 6.40202L11.9153 6.44476L12.9392 7.54092L12.985 7.49818L11.9611 6.40202ZM21.1133 1.57982C19.876 0.594395 18.1036 0.664213 16.9478 1.74391L17.9717 2.84006C18.5841 2.26801 19.5232 2.23101 20.1787 2.75313L21.1133 1.57982ZM12.8319 7.59942C12.8262 7.60658 12.8202 7.61229 12.8152 7.61632C12.8103 7.62023 12.8079 7.62118 12.81 7.62016L12.1361 6.28005C11.9571 6.37004 11.7925 6.4968 11.6586 6.66489L12.8319 7.59942ZM12.81 7.62016C12.8239 7.61317 12.9059 7.5822 13.0987 7.59684C13.2846 7.61095 13.5273 7.66431 13.8182 7.76987C14.3995 7.98084 15.0978 8.37285 15.7921 8.92583L16.7266 7.75252C15.9295 7.11763 15.0908 6.636 14.3299 6.35985C13.9497 6.22185 13.57 6.12829 13.2122 6.10114C12.8613 6.07451 12.4784 6.10794 12.1361 6.28005L12.81 7.62016ZM15.7921 8.92583C16.4863 9.4788 17.0246 10.0717 17.3602 10.5911C17.5282 10.851 17.6345 11.0756 17.6898 11.2537C17.7472 11.4383 17.7354 11.5252 17.7317 11.5403L19.1886 11.8973C19.2798 11.5252 19.2267 11.1444 19.1222 10.8084C19.0158 10.4658 18.8396 10.1167 18.6201 9.77693C18.1807 9.0971 17.5237 8.38741 16.7266 7.75252L15.7921 8.92583ZM17.7317 11.5403C17.7312 11.5425 17.7316 11.54 17.7343 11.5344C17.7371 11.5285 17.7413 11.5215 17.747 11.5143L18.9203 12.4488C19.0542 12.2807 19.1409 12.0918 19.1886 11.8973L17.7317 11.5403ZM13.7614 9.22558C13.3293 8.74171 13.0513 8.29707 12.9227 7.95724C12.7796 7.57933 12.8853 7.5324 12.8319 7.59942L11.6586 6.66489C11.2047 7.23471 11.3192 7.9584 11.5198 8.48833C11.7349 9.05635 12.1355 9.6568 12.6425 10.2247L13.7614 9.22558ZM17.747 11.5143C17.7977 11.4507 17.7862 11.5477 17.4439 11.5137C17.1306 11.4826 16.6911 11.3487 16.1726 11.0873L15.4974 12.4268C16.1143 12.7377 16.7371 12.9509 17.2957 13.0064C17.8254 13.059 18.4956 12.9821 18.9203 12.4488L17.747 11.5143ZM20.1787 2.75312L20.8271 3.26959L21.7617 2.09629L21.1133 1.57983L20.1787 2.75312ZM21.0341 12.3509L1.96044 12.3509L1.96044 13.8509L21.0341 13.8509V12.3509ZM16.803 20.25L6.19159 20.25V21.75L16.803 21.75V20.25Z"></path>
 								</svg>
-								<dt
-									class="facts__label svelte-1r658j4"
-									data-svelte-h="svelte-i6v354">
+								<dt class="facts__label svelte-1r658j4">
 									Ingredients:
 								</dt>
 								<dd class="facts__value svelte-1r658j4">10</dd>
@@ -742,23 +568,12 @@
 							</div>
 						</dl>
 					</div>
-					<button
-						data-track
-						class="link facts__nutrition svelte-1r658j4"
-						aria-haspopup="dialog"
-						aria-expanded="false"
-						aria-controls="nutrition-modal">
+					<button data-track class="link facts__nutrition svelte-1r658j4" aria-haspopup="dialog" aria-expanded="false" aria-controls="nutrition-modal">
 						Nutrition information
 					</button>
 				</div>
-				<div
-					class="layout__item ad ad-after-details svelte-1r658j4"
-					data-svelte-h="svelte-1g8eywn">
-					<div
-						id="chicory-aisle-slot"
-						chicory-aisle-type="vertical"
-						chicory-require-ads="true"
-						class="hide-on-desktop"></div>
+				<div class="layout__item ad ad-after-details svelte-1r658j4">
+					<div id="chicory-aisle-slot" chicory-aisle-type="vertical" chicory-require-ads="true" class="hide-on-desktop"></div>
 				</div>
 				<section class="layout__item ingredients svelte-1r658j4">
 					<div class="heading svelte-1r658j4">
@@ -777,27 +592,19 @@
 						</li>
 						<li style="display: contents">
 							<span class="ingredient-quantity svelte-1r658j4">
-								<!-- HTML_TAG_START -->
 								1 <sup>1</sup> &frasl;<sub>2</sub>
-								<!-- HTML_TAG_END -->
 							</span>
 							<span class="ingredient-text svelte-1r658j4">
-								<!-- HTML_TAG_START -->
 								cups gingersnap crumbs (cookies smashed)
-								<!-- HTML_TAG_END -->
 							</span>
 						</li>
 						<li style="display: contents">
 							<span class="ingredient-quantity svelte-1r658j4">
-								<!-- HTML_TAG_START -->
 								<sup>1</sup>
 								&frasl;<sub>2</sub>
-								<!-- HTML_TAG_END -->
 							</span>
 							<span class="ingredient-text svelte-1r658j4">
-								<!-- HTML_TAG_START -->
 								cup finely chopped <a href="/about/pecan-276">pecans</a>
-								<!-- HTML_TAG_END -->
 							</span>
 						</li>
 						<li style="display: contents">
@@ -1242,9 +1049,7 @@
 					id="reviews">
 					<div class="conversation__review svelte-1f82czh">
 						<div class="conversation__review-header svelte-1f82czh">
-							<h2
-								class="conversation__review__title svelte-1f82czh"
-								data-svelte-h="svelte-r0shwt">
+							<h2 class="conversation__review__title svelte-1f82czh">
 								Reviews
 							</h2>
 							<div class="review-buttons-wrapper svelte-1f82czh">
@@ -1501,8 +1306,6 @@
 															class="text-truncate svelte-1aswkii">
 															<div
 																class="text svelte-1aswkii truncated">
-																<!-- HTML_TAG_START -->
-																<!-- HTML_TAG_END -->
 																Great recipe .. First time I made
 																cheesecake, and it turned out great ..
 																thanks
@@ -2909,8 +2712,6 @@
 															class="text-truncate svelte-1aswkii">
 															<div
 																class="text svelte-1aswkii truncated">
-																<!-- HTML_TAG_START -->
-																<!-- HTML_TAG_END -->
 																I made this for my husbands birthday and
 																he loved! (as did I :) ) I kind of
 																overbaked it so it didn't look very
@@ -3938,42 +3739,7 @@
 					</h2>
 					<ul class="links svelte-i21x07">
 						<li class="svelte-i21x07">
-							<a
-								href="https://www.food.com/recipe/marble-cheesecake-6778"
-								class="link link--plain svelte-i21x07">Marble Cheesecake
-							</a>
-							<a
-								href="https://www.food.com/recipe/pumpkin-swirl-cheesecake-3499"
-								class="link link--plain svelte-i21x07">Pumpkin Swirl Cheesecake
-							</a>
-							<a
-								href="https://www.food.com/recipe/the-best-belgian-waffles-63071"
-								class="link link--plain svelte-i21x07">The Best Belgian Waffles
-							</a>
-							<a
-								href="https://www.food.com/recipe/rich-pumpkin-cheesecake-3557"
-								class="link link--plain svelte-i21x07">Rich Pumpkin Cheesecake
-							</a>
-							<a
-								href="https://www.food.com/recipe/pumpkin-marble-cheesecake-w-chocolate-mousse-272440"
-								class="link link--plain svelte-i21x07">Pumpkin Marble Cheesecake W/ Chocolate Mousse
-							</a>
-							<a
-								href="https://www.food.com/recipe/baileys-marble-cheesecake-199947"
-								class="link link--plain svelte-i21x07">Baileys Marble Cheesecake
-							</a>
-							<a
-								href="https://www.food.com/recipe/low-carb-marble-cheesecake-97477"
-								class="link link--plain svelte-i21x07">Low Carb Marble Cheesecake
-							</a>
-							<a
-								href="https://www.food.com/recipe/fudge-marble-cheesecake-50633"
-								class="link link--plain svelte-i21x07">Fudge Marble Cheesecake
-							</a>
-							<a
-								href="https://www.food.com/recipe/royal-marble-cheesecake-101108"
-								class="link link--plain svelte-i21x07">Royal Marble Cheesecake
-							</a>
+							<a href="https://www.food.com/recipe/marble-cheesecake-6778" class="link link--plain svelte-i21x07">Marble Cheesecake</a>
 						</li>
 					</ul>
 				</aside>
@@ -3981,129 +3747,6 @@
 		</div>
 		<div class="next-recipe"></div>
 	</div>
-	<!-- HTML_TAG_START -->
-	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "Recipe",
-			"mainEntityOfPage": "true",
-			"name": "Pumpkin Marble Cheesecake",
-			"author": "Cheryl E",
-			"cookTime": "PT55M",
-			"prepTime": "PT25M",
-			"totalTime": "PT1H20M",
-			"datePublished": "2001-09-25T10:33Z",
-			"description": "Make and share this Pumpkin Marble Cheesecake recipe from Food.com.",
-			"image": "https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/12/08/0/n9Pl9UFMQIuMplNpzfBj_DSC05555-2.jpg",
-			"recipeCategory": "Cheesecake",
-			"keywords": "Dessert,Fruit,Nuts,Potluck,Thanksgiving,Weeknight,Oven,< 4 Hours,Easy",
-			"recipeIngredient": [
-				"1 1/2  cups    gingersnap crumbs (cookies smashed)",
-				"1/2  cup   finely chopped pecans",
-				"1/3  cup    margarine, melted ",
-				"2 (8   ounce) packages   cream cheese",
-				"3/4  cup    sugar, divided ",
-				"1   teaspoon    vanilla",
-				"3       eggs",
-				"1   cup    canned pumpkin",
-				"3/4  teaspoon    ground cinnamon",
-				"1/4  teaspoon    ground nutmeg"
-			],
-			"aggregateRating": {
-				"@type": "AggregateRating",
-				"ratingValue": "5.0",
-				"reviewCount": "23"
-			},
-			"nutrition": {
-				"@type": "NutritionInformation",
-				"calories": "478.7",
-				"fatContent": "30.4",
-				"saturatedFatContent": "11.7",
-				"cholesterolContent": "105.8",
-				"sodiumContent": "487.4",
-				"carbohydrateContent": "46.2",
-				"fiberContent": "2.1",
-				"sugarContent": "24.4",
-				"proteinContent": "7.3"
-			},
-			"recipeInstructions": [{
-					"@type": "HowToStep",
-					"text": "Preheat oven to 350&deg;F."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "------CRUST-------."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "Mix crumbs, pecans and margarine; press onto bottom and 1-1/2 inches up sides of a 9-inch springform pan. bake 10-minutes at 350&deg;F."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "---------FILLING--------."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "Beat cream cheese, 1/2-c sugar and vanilla at medium speed until well blended."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "Add eggs 1 at a time, mixing well after each."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "Reserve 1 cup of batter."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "Add remaining sugar, pumpkin and spices to remaining batter mixing well."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "Spoon pumpkin and cream cheese batters alternately over crust."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "Cut through batters with a knife multiple times to create a marble effect."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "bake 55 minutes at 350&deg;F."
-				},
-				{
-					"@type": "HowToStep",
-					"text": "loosen cake from edge of pan;cool before removing rim, refrigerate."
-				}
-			],
-			"recipeYield": "10-12 serving(s)",
-			"review": [{
-				"@type": "Review",
-				"description": "Great recipe .. First time I made cheesecake, and it turned out great .. thanks",
-				"datePublished": "February 14, 2002",
-				"itemReviewed": {
-					"@type": "Thing",
-					"name": "Pumpkin Marble Cheesecake"
-				},
-				"reviewRating": {
-					"@type": "Rating",
-					"worstRating": "1",
-					"ratingValue": 5,
-					"bestRating": "5"
-				},
-				"author": "najwa"
-			}],
-			"publisher": {
-				"@type": "Organization",
-				"name": "Food.com",
-				"logo": {
-					"@type": "ImageObject",
-					"url": "https://geniuskitchen.sndimg.com/fdc-new/img/FDC-Logo.png"
-				},
-				"url": "https://www.food.com"
-			}
-		}
-	</script>
-	<!-- HTML_TAG_END -->
 </div>
 
 <?php get_footer(); ?>

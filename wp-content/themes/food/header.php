@@ -14,6 +14,26 @@
 </head>
 
 <body <?php body_class() ?>>
+
+  <?php
+
+  $menu = wp_get_nav_menu_items('Top Menu');
+  $arrMenu = array();
+
+  foreach ($menu as $item) {
+    $key = $item->title . '---' . $item->ID;
+    if ($item->menu_item_parent == 0) {
+      $arrMenu[$key] = [];
+    } else {
+      $arrMenu[$key][] = [
+        'title' => $item->title,
+        'url' => $item->url,
+      ];
+    }
+  }
+
+  ?>
+
   <div style="display: contents">
     <div id="top" class="site svelte-qlls6c" vocab="https://schema.org/">
       <div id="header-wrap" class="svelte-dgiybl">
@@ -38,22 +58,25 @@
             </a>
             <nav id="main-nav" class="svelte-dgiybl">
               <ul class="nav-list svelte-dgiybl">
-                <li class="nav-list-item open svelte-dgiybl">
-                  <span
-                    class="nav-list-item__text svelte-dgiybl"
-                    data-svelte-h="svelte-u392rh">Recipes</span>
-                  <span class="caret svelte-dgiybl">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 1024 1024" class="caret">
-                      <path fill="currentColor" d="M19.552 781.839c-26.080-26.080-26.080-68.364 0-94.444l445.218-445.218c12.531-12.531 29.505-19.551 47.225-19.551s34.699 7.037 47.225 19.551l445.218 445.218c26.074 26.080 26.074 68.364 0 94.444-26.097 26.080-68.375 26.080-94.444 0l-397.999-397.999-397.999 397.999c-26.080 26.080-68.364 26.080-94.444 0z"></path>
-                    </svg>
-                  </span>
-                  <ul class="dropdown svelte-dgiybl" data-svelte-h="svelte-16tv9u6">
-                    <li class="dropdown__item svelte-dgiybl">
-                      <a href="/ideas/breakfast-brunch-recipes-6514?ref=nav" class="svelte-dgiybl">Breakfast &amp;Brunch Recipes
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+                <?php foreach ($arrMenu as $menuID => $menuItem) { ?>
+                  <?php $explode = explode('---', $menuID); ?>
+                  <li class="nav-list-item open svelte-dgiybl">
+                    <span class="nav-list-item__text svelte-dgiybl"><?php echo $explode[0]; ?></span>
+                    <span class="caret svelte-dgiybl">
+                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 1024 1024" class="caret">
+                        <path fill="currentColor" d="M19.552 781.839c-26.080-26.080-26.080-68.364 0-94.444l445.218-445.218c12.531-12.531 29.505-19.551 47.225-19.551s34.699 7.037 47.225 19.551l445.218 445.218c26.074 26.080 26.074 68.364 0 94.444-26.097 26.080-68.375 26.080-94.444 0l-397.999-397.999-397.999 397.999c-26.080 26.080-68.364 26.080-94.444 0z"></path>
+                      </svg>
+                    </span>
+                    <?php foreach ($menuItem as $item) { ?>
+                      <ul class="dropdown svelte-dgiybl">
+                        <li class="dropdown__item svelte-dgiybl">
+                          <a href="<?php echo $item['url'] ?>" class="svelte-dgiybl"><?php echo $item['title'] ?>
+                          </a>
+                        </li>
+                      </ul>
+                  </li>
+                <?php } ?>
+              <?php } ?>
               </ul>
             </nav>
           </div>
