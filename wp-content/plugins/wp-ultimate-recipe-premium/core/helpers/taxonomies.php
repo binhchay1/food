@@ -67,6 +67,7 @@ class WPURP_Taxonomies {
             $taxonomies = $this->add_taxonomy_to_array($taxonomies, 'ingredient',   __( 'Ingredients', 'wp-ultimate-recipe' ),  __( 'Ingredient', 'wp-ultimate-recipe' ));
             $taxonomies = $this->add_taxonomy_to_array($taxonomies, 'course',       __( 'Courses', 'wp-ultimate-recipe' ),      __( 'Course', 'wp-ultimate-recipe' ));
             $taxonomies = $this->add_taxonomy_to_array($taxonomies, 'cuisine',      __( 'Cuisines', 'wp-ultimate-recipe' ),     __( 'Cuisine', 'wp-ultimate-recipe' ));
+            $taxonomies = $this->add_taxonomy_to_array($taxonomies, 'collection',      __( 'Collection', 'wp-ultimate-recipe' ),     __( 'Collection', 'wp-ultimate-recipe' ));
             $taxonomies = $this->add_taxonomy_to_array($taxonomies, 'wpurp_keyword', __( 'Keywords', 'wp-ultimate-recipe' ),     __( 'Keyword', 'wp-ultimate-recipe' ));
 
             $this->update( $taxonomies );
