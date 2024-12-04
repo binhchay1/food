@@ -1,11 +1,19 @@
 <?php get_header(); ?>
 
-<?php 
+<?php
 
 $terms = get_terms([
     'taxonomy' => 'collection',
     'hide_empty' => false,
 ]);
+
+$argExploreMore = array(
+    'post_type' => 'recipe',
+    'posts_per_page' => 6,
+    'order' => 'DESC',
+    'orderby' => 'date'
+);
+$exploreMore = new WP_Query($argExploreMore);
 
 ?>
 
@@ -89,15 +97,19 @@ $terms = get_terms([
                 </div>
             </div>
         </div>
+
         <div class="layout__item svelte-1mv8t38">
             <div class="block subnav text-image svelte-j321d5">
                 <h2 class="title svelte-j321d5">Explore More</h2>
-                <div class="image-title-block svelte-j321d5">
-                    <a class="image svelte-j321d5" href="/ideas/comfort-food-6505">
-                        <img style="--aspect-ratio: 1/1" src="https://imgstore.sndimg.com/f_auto,c_thumb,q_55,w_250,ar_1:1/foodcom/images/be27babc-a2cb-4807-a7cf-f492f190f130.jpg" sizes="160px" alt="garlic alfredo" loading="eager" class="round svelte-kb6fq" />
-                    </a>
-                    <a class="text svelte-j321d5" href="/ideas/comfort-food-6505">Comfort Food Classics</a>
-                </div>
+
+                <?php foreach ($exploreMore->posts as $explorePost) { ?>
+                    <div class="image-title-block svelte-j321d5">
+                        <a class="image svelte-j321d5" href="<?php echo get_permalink($explorePost->ID) ?>">
+                            <img style="--aspect-ratio: 1/1" src="<?php echo get_the_post_thumbnail_url($explorePost->ID) ?>" sizes="160px" alt="<?php echo $explorePost->post_title ?>" loading="eager" class="round svelte-kb6fq" />
+                        </a>
+                        <a class="text svelte-j321d5" href="<?php echo get_permalink($explorePost->ID) ?>"><?php echo $explorePost->post_title ?></a>
+                    </div>
+                <?php } ?>
             </div>
         </div>
 
@@ -120,6 +132,7 @@ $terms = get_terms([
                 <a class="cta svelte-n9bgqc" href="/recipe/all/trending">See all Recipes</a>
             </div>
         </div>
+
         <div class="layout__item svelte-1mv8t38">
             <div class="block svelte-109yyfj">
                 <h2>Don't Miss</h2>
@@ -139,6 +152,7 @@ $terms = get_terms([
                 </div>
             </div>
         </div>
+
         <div class="layout__item svelte-1mv8t38">
             <div class="block svelte-n9bgqc">
                 <div class="heading svelte-n9bgqc">
@@ -177,6 +191,7 @@ $terms = get_terms([
                 </div>
             </div>
         </div>
+
         <div class="layout__item svelte-1mv8t38">
             <div class="block svelte-n9bgqc">
                 <div class="heading svelte-n9bgqc">
@@ -194,6 +209,7 @@ $terms = get_terms([
                 <a class="cta svelte-n9bgqc" href="/recipe/all/trending">See all Recipes</a>
             </div>
         </div>
+
     </main>
 </div>
 <?php get_footer(); ?>

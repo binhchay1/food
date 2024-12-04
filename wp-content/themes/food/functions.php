@@ -51,25 +51,18 @@ add_action('after_setup_theme', 'food_setup');
  */
 function food_scripts_styles()
 {
-	/*
-	 * Loads js.
-	 */
 	wp_enqueue_script('jquery');
-	/*
-	 * Loads css
-	 */
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css');
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
 
 	if (is_single()) {
-		wp_enqueue_style('style', get_stylesheet_directory_uri() . '/asset/css/post.css');
+		wp_enqueue_style('style-post', get_stylesheet_directory_uri() . '/asset/css/post.css');
 	}
 }
 
 add_action('wp_enqueue_scripts', 'food_scripts_styles');
 remove_action('shutdown', 'wp_ob_end_flush_all', 1);
 
-/* Enqueues for Admin */
 function food_admin_scripts_styles()
 {
 	wp_enqueue_style('wc-blocks-style');

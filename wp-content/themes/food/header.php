@@ -16,7 +16,6 @@
 <body <?php body_class() ?>>
 
   <?php
-
   $menu = wp_get_nav_menu_items('Top Menu');
   $arrMenu = array();
 
@@ -70,8 +69,7 @@
                     <?php foreach ($menuItem as $item) { ?>
                       <ul class="dropdown svelte-dgiybl">
                         <li class="dropdown__item svelte-dgiybl">
-                          <a href="<?php echo $item['url'] ?>" class="svelte-dgiybl"><?php echo $item['title'] ?>
-                          </a>
+                          <a href="<?php echo $item['url'] ?>" class="svelte-dgiybl"><?php echo $item['title'] ?></a>
                         </li>
                       </ul>
                   </li>

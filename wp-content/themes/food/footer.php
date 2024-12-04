@@ -159,9 +159,7 @@
 		</div>
 		<div class="section svelte-1ozytz">
 			<div>
-				<span class="copyright svelte-1ozytz">© 2024 Warner Bros. Discovery, Inc. or its subsidiaries and
-					affiliates. All rights reserved.
-				</span>
+				<span class="copyright svelte-1ozytz">© 2024 Warner Bros. Discovery, Inc. or its subsidiaries and affiliates. All rights reserved.</span>
 			</div>
 			<ul class="row svelte-1ozytz">
 				<li class="svelte-1ozytz">
