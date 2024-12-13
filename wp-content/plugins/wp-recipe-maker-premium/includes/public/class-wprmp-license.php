@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Handle licensing for the Premium addon.
  *
@@ -17,7 +18,8 @@
  * @subpackage WP_Recipe_Maker_Premium/includes/admin
  * @author     Brecht Vandersmissen <brecht@bootstrapped.ventures>
  */
-class WPRMP_License {
+class WPRMP_License
+{
 
 	private static $debug = false;
 
@@ -44,25 +46,24 @@ class WPRMP_License {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function init() {
+	public static function init()
+	{
 		self::set_premium_bundle();
 
-		add_filter( 'pre_set_site_transient_update_plugins', array( __CLASS__, 'check_license_status' ) );
+		add_filter('pre_set_site_transient_update_plugins', array(__CLASS__, 'check_license_status'));
 
-		add_filter( 'wprm_settings_structure', array( __CLASS__, 'settings_structure' ) );
-		add_filter( 'wprm_settings_update', array( __CLASS__, 'check_license_key_on_settings_update' ), 10, 2 );
+		add_filter('wprm_settings_structure', array(__CLASS__, 'settings_structure'));
+		add_filter('wprm_settings_update', array(__CLASS__, 'check_license_key_on_settings_update'), 10, 2);
 
-		if ( is_admin() ) {
-			add_filter( 'wprm_should_load_admin_assets', array( __CLASS__, 'load_admin_assets' ) );
-			add_action( 'admin_notices', array( __CLASS__, 'license_inactive_notice' ) );
-			add_action( 'admin_init', array( __CLASS__, 'edd_plugin_updater' ) );
+		if (is_admin()) {
+			add_filter('wprm_should_load_admin_assets', array(__CLASS__, 'load_admin_assets'));
 
-			if ( self::$debug ) {
-				add_action( 'admin_init', array( __CLASS__, 'debug_license' ) );
+			if (self::$debug) {
+				add_action('admin_init', array(__CLASS__, 'debug_license'));
 			}
 
-			if ( ! class_exists( 'EDD_SL_Plugin_Updater' ) ) {
-				include( WPRMP_DIR . 'vendor/edd/EDD_SL_Plugin_Updater.php' );
+			if (! class_exists('EDD_SL_Plugin_Updater')) {
+				include(WPRMP_DIR . 'vendor/edd/EDD_SL_Plugin_Updater.php');
 			}
 		}
 	}
@@ -72,8 +73,9 @@ class WPRMP_License {
 	 *
 	 * @since    2.0.0
 	 */
-	public static function set_premium_bundle() {
-		switch ( WPRMP_BUNDLE ) {
+	public static function set_premium_bundle()
+	{
+		switch (WPRMP_BUNDLE) {
 			case 'Elite':
 				self::$products['elite'] = array(
 					'item_id' => 23343,
@@ -107,27 +109,9 @@ class WPRMP_License {
 	 *
 	 * @since    1.3.0
 	 */
-	public static function get_products() {
-		return apply_filters( 'wprmp_edd_products', self::$products );
-	}
-
-	/**
-	 * Set up plugin updater to check for plugin updates.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function edd_plugin_updater() {
-		$products = self::get_products();
-
-		foreach ( $products as $id => $product ) {
-			new EDD_SL_Plugin_Updater( self::$store, $product['file'], array(
-					'version' 	=> $product['version'],
-					'license' 	=> WPRM_Settings::get( 'license_' . $id ),
-					'item_id' 	=> $product['item_id'],
-					'author' 	=> 'Bootstrapped Ventures',
-				)
-			);
-		}
+	public static function get_products()
+	{
+		return apply_filters('wprmp_edd_products', self::$products);
 	}
 
 	/**
@@ -136,13 +120,14 @@ class WPRMP_License {
 	 * @since    3.0.0
 	 * @param    array $structure Settings structure.
 	 */
-	public static function settings_structure( $structure ) {
-		require( WPRMP_DIR . 'templates/admin/settings/license.php' );
+	public static function settings_structure($structure)
+	{
+		require(WPRMP_DIR . 'templates/admin/settings/license.php');
 
-		if ( isset( $structure['licenseKey'] ) ) {
+		if (isset($structure['licenseKey'])) {
 			$structure['licenseKey'] = $license_key;
 		} else {
-			$structure = array( 'licenseKey' => $license_key ) + $structure;
+			$structure = array('licenseKey' => $license_key) + $structure;
 		}
 
 		return $structure;
@@ -155,42 +140,44 @@ class WPRMP_License {
 	 * @param    array $new_settings Settings after update.
 	 * @param    array $old_settings Settings before update.
 	 */
-	public static function check_license_key_on_settings_update( $new_settings, $old_settings ) {
+	public static function check_license_key_on_settings_update($new_settings, $old_settings)
+	{
 		$products = self::get_products();
 
-		foreach ( $products as $id => $product ) {
-			$old_license = isset( $old_settings[ 'license_' . $id ] ) ? $old_settings[ 'license_' . $id ] : '';
-			$new_license = isset( $new_settings[ 'license_' . $id ] ) ? $new_settings[ 'license_' . $id ] : '';
+		foreach ($products as $id => $product) {
+			$old_license = isset($old_settings['license_' . $id]) ? $old_settings['license_' . $id] : '';
+			$new_license = isset($new_settings['license_' . $id]) ? $new_settings['license_' . $id] : '';
 
 			// License hasn't changed and status is active: do nothing.
-			if ( $old_license === $new_license && 'valid' === self::get_license_status( $id ) ) {
+			if ($old_license === $new_license && 'valid' === self::get_license_status($id)) {
 				continue;
 			}
-			
+
 			// Something changed, so clear the status.
-			self::update_license_status( $id, '' );
+			self::update_license_status($id, '');
 
 			// Deactivate the old license if there was one.
-			if ( $old_license ) {
-				self::deactivate_license( $id, $old_license );
+			if ($old_license) {
+				self::deactivate_license($id, $old_license);
 			}
 
 			// Activate the new license.
-			self::activate_license( $id, $new_license );
+			self::activate_license($id, $new_license);
 		}
 
 		return $new_settings;
 	}
 
-	public static function check_license_status( $transient ) {
+	public static function check_license_status($transient)
+	{
 		$products = self::get_products();
 
-		foreach ( $products as $id => $product ) {
-			self::update_license( $id, WPRM_Settings::get( 'license_' . $id ) );
+		foreach ($products as $id => $product) {
+			self::update_license($id, WPRM_Settings::get('license_' . $id));
 		}
 
 		// Only check once.
-		remove_filter( 'pre_set_site_transient_update_plugins', array( __CLASS__, 'check_license_status' ) );
+		remove_filter('pre_set_site_transient_update_plugins', array(__CLASS__, 'check_license_status'));
 
 		return $transient;
 	}
@@ -202,8 +189,14 @@ class WPRMP_License {
 	 * @param    mixed $id     ID of the product we are updating the license for.
 	 * @param    mixed $status Status to set.
 	 */
-	public static function update_license_status( $id, $status ) {
-		update_option( 'wprm_license_' . $id . '_status', $status, false );
+	public static function update_license_status($id, $status)
+	{
+		update_option('wprm_license_' . $id . '_status', $status, true);
+	}
+
+	public static function add_license_status($id, $status)
+	{
+		add_option('wprm_license_' . $id . '_status', $status, true);
 	}
 
 	/**
@@ -212,12 +205,14 @@ class WPRMP_License {
 	 * @since    3.0.0
 	 * @param    mixed $id ID of the product we are getting the license status for.
 	 */
-	public static function get_license_status( $id ) {
-		$status = get_option( 'wprm_license_' . $id . '_status', false );
+	public static function get_license_status($id)
+	{
+
+		$status = get_option('wprm_license_' . $id . '_status', false);
 
 		// Backwards compatibility.
-		if ( false === $status ) {
-			$status = WPRM_Settings::get( 'license_' . $id . '_status' );
+		if (false === $status) {
+			self::add_license_status('premium', '');
 		}
 
 		return $status;
@@ -230,9 +225,10 @@ class WPRMP_License {
 	 * @param    mixed $id     ID of the product we are activating the license for.
 	 * @param    mixed $license License key to activate.
 	 */
-	public static function activate_license( $id, $license ) {
+	public static function activate_license($id, $license)
+	{
 		$products = self::get_products();
-		$product = $products[ $id ];
+		$product = $products[$id];
 
 		$api_params = array(
 			'edd_action' => 'activate_license',
@@ -242,16 +238,16 @@ class WPRMP_License {
 		);
 
 		// Call the EDD license API.
-		$response = wp_remote_post( self::$store, array( 'timeout' => 60, 'sslverify' => false, 'body' => $api_params ) );
+		$response = wp_remote_post(self::$store, array('timeout' => 60, 'sslverify' => false, 'body' => $api_params));
 
-		if ( is_wp_error( $response ) ) {
+		if (is_wp_error($response)) {
 			return false;
 		}
 
-		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+		$license_data = json_decode(wp_remote_retrieve_body($response));
 
-		if ( $license_data ) {
-			self::update_license_status( $id, $license_data->license );
+		if ($license_data) {
+			self::update_license_status($id, $license_data->license);
 		}
 	}
 
@@ -262,9 +258,10 @@ class WPRMP_License {
 	 * @param    mixed $id     ID of the product we are deactivating the license for.
 	 * @param    mixed $license License key to deactivate.
 	 */
-	public static function deactivate_license( $id, $license ) {
+	public static function deactivate_license($id, $license)
+	{
 		$products = self::get_products();
-		$product = $products[ $id ];
+		$product = $products[$id];
 
 		$api_params = array(
 			'edd_action' => 'deactivate_license',
@@ -274,15 +271,15 @@ class WPRMP_License {
 		);
 
 		// Call the EDD license API.
-		$response = wp_remote_post( self::$store, array( 'timeout' => 60, 'sslverify' => false, 'body' => $api_params ) );
+		$response = wp_remote_post(self::$store, array('timeout' => 60, 'sslverify' => false, 'body' => $api_params));
 
-		if ( is_wp_error( $response ) ) {
+		if (is_wp_error($response)) {
 			return false;
 		}
 
-		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+		$license_data = json_decode(wp_remote_retrieve_body($response));
 
-		if ( $license_data && 'deactivated' === $license_data->license ) {
+		if ($license_data && 'deactivated' === $license_data->license) {
 			return true;
 		}
 	}
@@ -294,9 +291,10 @@ class WPRMP_License {
 	 * @param	mixed $id     ID of the product we are updating the license for.
 	 * @param	mixed $license License key to update.
 	 */
-	public static function update_license( $id, $license ) {
+	public static function update_license($id, $license)
+	{
 		$products = self::get_products();
-		$product = $products[ $id ];
+		$product = $products[$id];
 
 		$api_params = array(
 			'edd_action' => 'check_license',
@@ -306,25 +304,26 @@ class WPRMP_License {
 		);
 
 		// Call the EDD license API.
-		$response = wp_remote_post( self::$store, array( 'timeout' => 60, 'sslverify' => false, 'body' => $api_params ) );
+		$response = wp_remote_post(self::$store, array('timeout' => 60, 'sslverify' => false, 'body' => $api_params));
 
-		if ( is_wp_error( $response ) ) {
+		if (is_wp_error($response)) {
 			return false;
 		}
 
-		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+		$license_data = json_decode(wp_remote_retrieve_body($response));
 
-		if ( $license_data ) {
-			self::update_license_status( $id, $license_data->license );
+		if ($license_data) {
+			self::update_license_status($id, $license_data->license);
 		}
 	}
 
-	public static function debug_license() {
+	public static function debug_license()
+	{
 		$products = self::get_products();
 
-		foreach ( $products as $id => $product ) {
-			$license = WPRM_Settings::get( 'license_' . $id );
-			WPRM_Debug::log( $license );
+		foreach ($products as $id => $product) {
+			$license = WPRM_Settings::get('license_' . $id);
+			WPRM_Debug::log($license);
 
 			$api_params = array(
 				'edd_action' => 'check_license',
@@ -332,19 +331,19 @@ class WPRMP_License {
 				'item_id' 	 => $product['item_id'],
 				'url'        => home_url(),
 			);
-	
+
 			// Call the EDD license API.
-			$response = wp_remote_post( self::$store, array( 'timeout' => 60, 'sslverify' => false, 'body' => $api_params ) );
+			$response = wp_remote_post(self::$store, array('timeout' => 60, 'sslverify' => false, 'body' => $api_params));
 
-			if ( is_wp_error( $response ) ) {
-				WPRM_Debug::log( $response );
+			if (is_wp_error($response)) {
+				WPRM_Debug::log($response);
 			} else {
-				$license_data = json_decode( wp_remote_retrieve_body( $response ) );
+				$license_data = json_decode(wp_remote_retrieve_body($response));
 
-				if ( $license_data ) {
-					WPRM_Debug::log( $license_data );
+				if ($license_data) {
+					WPRM_Debug::log($license_data);
 				} else {
-					WPRM_Debug::log( $response );
+					WPRM_Debug::log($response);
 				}
 			}
 		}
@@ -355,14 +354,15 @@ class WPRMP_License {
 	 *
 	 * @since    6.8.0
 	 */
-	public static function load_admin_assets( $load ) {
+	public static function load_admin_assets($load)
+	{
 		$screen = get_current_screen();
 
-		if ( $screen && 'plugins' === $screen->id && current_user_can( 'manage_options' ) ) {
+		if ($screen && 'plugins' === $screen->id && current_user_can('manage_options')) {
 			$products = self::get_products();
 
-			foreach ( $products as $id => $product ) {
-				if ( ! in_array( self::get_license_status( $id ), array( 'valid', 'expired' ) ) ) {
+			foreach ($products as $id => $product) {
+				if (! in_array(self::get_license_status($id), array('valid', 'expired'))) {
 					return true;
 				}
 			}
@@ -376,24 +376,9 @@ class WPRMP_License {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function license_inactive_notice() {
-		$screen = get_current_screen();
-
-		if ( $screen && 'plugins' === $screen->id && current_user_can( 'manage_options' ) ) {
-			$products = self::get_products();
-
-			foreach ( $products as $id => $product ) {
-				$license_status = self::get_license_status( $id );
-
-				if ( 'expired' === $license_status ) {
-					require( WPRMP_DIR . 'templates/admin/settings/license_expired.php' );
-				} elseif ( 'invalid_item_id' === $license_status ) {
-					require( WPRMP_DIR . 'templates/admin/settings/license_different.php' );
-				} elseif ( 'valid' !== $license_status ) {
-					require( WPRMP_DIR . 'templates/admin/settings/license_invalid.php' );
-				}
-			}
-		}
+	public static function license_inactive_notice()
+	{
+		
 	}
 }
 
