@@ -965,8 +965,8 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: brandon-grotesque;
-  src: url(/food/wp-content/themes/voice/asset/font/brandon_grotesque_med_sub.woff2) format("woff2"),
-    url(/food/wp-content/themes/voice/asset/font/brandon_g_med.otf) format("opentype");
+  src: url(/food/wp-content/themes/food/asset/font/brandon_grotesque_med_sub.woff2) format("woff2"),
+    url(/food/wp-content/themes/food/asset/font/brandon_g_med.otf) format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -974,8 +974,8 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: brandon-grotesque;
-  src: url(/food/wp-content/themes/voice/asset/font/brandon_grotesque_bold_sub.woff2) format("woff2"),
-    url(/food/wp-content/themes/voice/asset/font/brandon_g_bld.otf) format("opentype");
+  src: url(/food/wp-content/themes/food/asset/font/brandon_grotesque_bold_sub.woff2) format("woff2"),
+    url(/food/wp-content/themes/food/asset/font/brandon_g_bld.otf) format("opentype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -983,7 +983,7 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: Gotham;
-  src: url(/food/wp-content/themes/voice/asset/font/gotham_book_sub.woff2) format("woff2");
+  src: url(/food/wp-content/themes/food/asset/font/gotham_book_sub.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -991,7 +991,7 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: Gotham;
-  src: url(/food/wp-content/themes/voice/asset/font/gotham_medium_sub.woff2) format("woff2");
+  src: url(/food/wp-content/themes/food/asset/font/gotham_medium_sub.woff2) format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -999,8 +999,8 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: brandon-grotesque-mobile;
-  src: url(/food/wp-content/themes/voice/asset/font/brandon_grotesque_med_sub.woff2) format("woff2"),
-    url(/food/wp-content/themes/voice/asset/font/brandon_g_med.otf) format("opentype");
+  src: url(/food/wp-content/themes/food/asset/font/brandon_grotesque_med_sub.woff2) format("woff2"),
+    url(/food/wp-content/themes/food/asset/font/brandon_g_med.otf) format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: optional;
@@ -1008,8 +1008,8 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: brandon-grotesque-mobile;
-  src: url(/food/wp-content/themes/voice/asset/font/brandon_grotesque_bold_sub.woff2) format("woff2"),
-    url(/food/wp-content/themes/voice/asset/font/brandon_g_bld.otf) format("opentype");
+  src: url(/food/wp-content/themes/food/asset/font/brandon_grotesque_bold_sub.woff2) format("woff2"),
+    url(/food/wp-content/themes/food/asset/font/brandon_g_bld.otf) format("opentype");
   font-weight: 900;
   font-style: normal;
   font-display: optional;
@@ -1017,7 +1017,7 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: Gotham-mobile;
-  src: url(/food/wp-content/themes/voice/asset/font/gotham_book_sub.woff2) format("woff2");
+  src: url(/food/wp-content/themes/food/asset/font/gotham_book_sub.woff2) format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: optional;
@@ -1025,7 +1025,7 @@ form.svelte-ozqdd1.svelte-ozqdd1 {
 
 @font-face {
   font-family: Gotham-mobile;
-  src: url(/food/wp-content/themes/voice/asset/font/gotham_medium_sub.woff2) format("woff2");
+  src: url(/food/wp-content/themes/food/asset/font/gotham_medium_sub.woff2) format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: optional;

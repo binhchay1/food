@@ -19,15 +19,17 @@
   $menu = wp_get_nav_menu_items('Top Menu');
   $arrMenu = array();
 
-  foreach ($menu as $item) {
-    $key = $item->title . '---' . $item->ID;
-    if ($item->menu_item_parent == 0) {
-      $arrMenu[$key] = [];
-    } else {
-      $arrMenu[$key][] = [
-        'title' => $item->title,
-        'url' => $item->url,
-      ];
+  if ($menu) {
+    foreach ($menu as $item) {
+      $key = $item->title . '---' . $item->ID;
+      if ($item->menu_item_parent == 0) {
+        $arrMenu[$key] = [];
+      } else {
+        $arrMenu[$key][] = [
+          'title' => $item->title,
+          'url' => $item->url,
+        ];
+      }
     }
   }
 

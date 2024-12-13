@@ -93,35 +93,35 @@ add_action('init', function ($search) {
 	add_rewrite_rule('search/?$', 'index.php?s=' . $search, 'top');
 });
 
-// add_action('template_redirect', function () {
+add_action('template_redirect', function () {
+	if ((defined('DOING_CRON') && DOING_CRON) || (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) || (defined('DOING_AJAX') && DOING_AJAX)) return;
+	if (is_admin()) return;
 
-// 	if ((defined('DOING_CRON') && DOING_CRON) || (defined('XMLRPC_REQUEST') && XMLRPC_REQUEST) || (defined('DOING_AJAX') && DOING_AJAX)) return;
-
-// 	if (is_admin()) return;
-
-// 	global $wp_query;
-// 	if ($wp_query->is_404 === false) {
-// 		$paths = explode('/', $_SERVER['REQUEST_URI']);
-// 		foreach ($paths as $path) {
-// 			if ($path == '404') {
-// 				if (end($paths) == '') {
-// 					status_header(200);
-// 					$wp_query->is_404  = false;
-// 					return;
-// 				}
-// 			}
-// 		}
-// 	} else {
-// 		$paths = explode('/', $_SERVER['REQUEST_URI']);
-// 		foreach ($paths as $path) {
-// 			if ($path == '404') {
-// 				if (end($paths) == '') {
-// 					status_header(200);
-// 					$wp_query->is_404  = false;
-// 					get_template_part(404);
-// 					exit();
-// 				}
-// 			}
-// 		}
-// 	}
-// }, PHP_INT_MAX);
+	global $wp_query;
+	if ($wp_query->is_404 === false) {
+		$paths = explode('/', $_SERVER['REQUEST_URI']);
+		foreach ($paths as $path) {
+			if ($path == '404') {
+				if (end($paths) == '') {
+					status_header(200);
+					$wp_query->is_404  = false;
+					return;
+				}
+			}
+		}
+	} else {
+		$paths = explode('/', $_SERVER['REQUEST_URI']);
+		foreach ($paths as $path) {
+			if ($path == '404') {
+				if (end($paths) == '') {
+					status_header(200);
+					$wp_query->is_404  = false;
+					get_template_part(404);
+					exit();
+				}
+			}
+		}
+	}
+},
+	PHP_INT_MAX
+);
