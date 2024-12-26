@@ -87,6 +87,39 @@ spl_autoload_register(function ($classname) {
  */
 function activate_wp_recipe_maker_premium()
 {
+	global $wpdb;
+	$db_table_name = $wpdb->prefix . 'wprm_reports';
+	$db_version = '1.0.0';
+	$charset_collate = $wpdb->get_charset_collate();
+
+	if ($wpdb->get_var("show tables like '$db_table_name'") != $db_table_name) {
+		$sql = "CREATE TABLE $db_table_name (
+                id bigInt() NOT NULL auto_increment,
+                score bigInt(),
+                meta text(),
+                UNIQUE KEY id (id)
+        ) $charset_collate;";
+
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+		add_option('my_db_version', $db_version);
+		dbDelta($sql);
+	}
+
+	$arrValue = [
+		'wprm_settings' => 'a:1:{s:15:"license_premium";s:32:"4d7acf6f334117bb0518b2816f5f0d65";}',
+		'wprm_equipment_children' => 'a:0:{}',
+		'wprm_ingredient_unit_children' => 'a:0:{}',
+		'wprm_ingredient_children' => 'a:0:{}',
+		'wprm_onboarded' => '1734075126',
+		'wprm_license_premium_status' => 'valid'
+	];
+
+	foreach ($arrValue as $key => $value) {
+		if (!option_exists($key)) {
+			add_option($key, $value, auto);
+		}
+	}
+
 	require_once plugin_dir_path(__FILE__) . 'includes/class-wprmp-activator.php';
 	WPRMP_Activator::activate();
 }
@@ -126,46 +159,8 @@ function run_wp_recipe_maker_premium()
 }
 run_wp_recipe_maker_premium();
 
-function create_report_table_and_add_option()
-{
-	global $wpdb;
-	$db_table_name = $wpdb->prefix . 'wprm_reports';
-	$db_version = '1.0.0';
-	$charset_collate = $wpdb->get_charset_collate();
-
-	if ($wpdb->get_var("show tables like '$db_table_name'") != $db_table_name) {
-		$sql = "CREATE TABLE $db_table_name (
-                id bigInt() NOT NULL auto_increment,
-                score bigInt(),
-                meta text(),
-                UNIQUE KEY id (id)
-        ) $charset_collate;";
-
-		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-		add_option('my_db_version', $db_version);
-		dbDelta($sql);
-	}
-
-	$arrValue = [
-		'wprm_settings' => 'a:1:{s:15:"license_premium";s:32:"4d7acf6f334117bb0518b2816f5f0d65";}',
-		'wprm_equipment_children' => 'a:0:{}',
-		'wprm_ingredient_unit_children' => 'a:0:{}',
-		'wprm_ingredient_children' => 'a:0:{}',
-		'wprm_onboarded' => '1734075126',
-		'wprm_license_premium_status' => ''
-	];
-
-	foreach ($arrValue as $key => $value) {
-		if (!option_exists($key)) {
-			add_option($key, $value, auto);
-		}
-	}
-}
-
 function option_exists($name, $site_wide = false)
 {
 	global $wpdb;
 	return $wpdb->query("SELECT * FROM " . ($site_wide ? $wpdb->base_prefix : $wpdb->prefix) . "options WHERE option_name ='$name' LIMIT 1");
 }
-
-register_activation_hook(__FILE__, 'create_report_table');

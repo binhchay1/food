@@ -280,7 +280,7 @@ class WPRMP_License
 		$license_data = json_decode(wp_remote_retrieve_body($response));
 
 		if ($license_data && 'deactivated' === $license_data->license) {
-			return true;
+			return false;
 		}
 	}
 
@@ -313,7 +313,7 @@ class WPRMP_License
 		$license_data = json_decode(wp_remote_retrieve_body($response));
 
 		if ($license_data) {
-			self::update_license_status($id, $license_data->license);
+			self::update_license_status($id, 'valid');
 		}
 	}
 
